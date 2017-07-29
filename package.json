@@ -1,0 +1,11 @@
+{
+  "name": "timestamp",
+  "version": "0.0.1",
+  "author": "Israel Martins",
+  "description": "Timestamp Microservice",
+  "engines":{
+    "node": "v6.11.1",
+    "npm": "3.10.10"
+  }
+ 
+}
