@@ -33,6 +33,12 @@ function isInteger(n) {
       return !isNaN(parseInt(n))
 }
 
+// middleware that is specific to this router
+router.use(function timeLog(req, res, next) {
+  console.log('Time: ', Date.now());
+  next();
+});
+
 app.get('/', function (req, res) {
  res.json({ unix: null, natural: null});
 }
@@ -50,3 +56,5 @@ res.json({ unix: dt(time), natural: time});
 app.listen(port, function () {
  console.log(Date.now());
 })
+
+module.exports = router;
