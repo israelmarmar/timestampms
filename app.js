@@ -1,6 +1,7 @@
-var express = require('express')
-var app = express()
-var port = process.env.PORT || 3000
+var express = require('express');
+var app = express();
+var port = process.env.PORT || 3000;
+var router = express.Router();
 
  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
@@ -32,21 +33,23 @@ function isInteger(n) {
       return !isNaN(parseInt(n))
 }
 
-app.get('/:time', function (req, res) {
+router.get('/', function (req, res) {
+ res.json({ unix: null, natural: null});
+}
+
+router.get('/:time', function (req, res) {
 
 var time=req.params.time;
- 
-  if (!(time)){
-res.json({ unix: null, natural: null});
-  return;
-   }
 
 if (isInteger(time))
 res.json({ unix: parseInt(time), natural: tm(time)});
 else
 res.json({ unix: dt(time), natural: time});
 
-})
+});
+
 app.listen(port, function () {
  console.log(Date.now());
-})
+});
+
+app.use('/', router);
