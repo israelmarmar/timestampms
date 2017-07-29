@@ -36,8 +36,10 @@ app.get('/:time', function (req, res) {
 
 var time=req.params.time;
  
- if (!(time))
+ if (!(time)){
 res.json({ unix: null, natural: null);
+  return;
+   }
 
 if (isInteger(time))
 res.json({ unix: parseInt(time), natural: tm(time)});
