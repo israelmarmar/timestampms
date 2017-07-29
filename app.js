@@ -1,6 +1,7 @@
-var express = require('express')
-var app = express()
-var port = process.env.PORT || 3000
+var express = require('express');
+var app = express.Router();
+
+var port = process.env.PORT || 3000;
 
  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
