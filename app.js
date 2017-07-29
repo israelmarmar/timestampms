@@ -35,7 +35,7 @@ function isInteger(n) {
 
 router.get('/', function (req, res) {
  res.json({ unix: null, natural: null});
-}
+});
 
 router.get('/:time', function (req, res) {
 
