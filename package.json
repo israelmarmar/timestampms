@@ -8,7 +8,7 @@
     "npm": "1.1.x"
   },
 "dependencies": {
-    "express": "latest",
+    "express": "latest"
   }
  
 }
